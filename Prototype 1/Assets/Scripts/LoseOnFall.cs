@@ -1,4 +1,5 @@
-﻿//Author: George Tang
+﻿
+//Author: George Tang
 //Assignment: Prototype 1
 //Description: Forces the player to stay on the platform. If player falls off the platform the trigger
 //             activates causing the player to lose
