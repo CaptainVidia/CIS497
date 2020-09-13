@@ -38,6 +38,7 @@ public class SpawnManager : MonoBehaviour
 
         //calling methold repeatedly ("method", startDelay, spawnInterval)
         //InvokeRepeating("SpawnRandomPrefab", 2, 1.5f);
+
         StartCoroutine(SpawnRandomPrefabwithCoroutine());
 
     }
@@ -50,9 +51,11 @@ public class SpawnManager : MonoBehaviour
         {
             SpawnRandomPrefab();
 
-            //float randomDelay = Random.Range(0.8f, 2.0f);
+            float randomDelay = Random.Range(0.8f, 2.0f);
 
             yield return new WaitForSeconds(1.5f);
         }
+
+       
     }
 }

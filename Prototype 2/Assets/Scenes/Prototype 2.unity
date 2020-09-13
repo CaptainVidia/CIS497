@@ -913,7 +913,7 @@ GameObject:
   - component: {fileID: 844652561}
   - component: {fileID: 844652560}
   m_Layer: 5
-  m_Name: GameOveText
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
