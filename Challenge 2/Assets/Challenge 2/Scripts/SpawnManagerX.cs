@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Challenge 2
+//Description: spawn dog and balls
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,20 +14,17 @@ public class SpawnManagerX : MonoBehaviour
     private float spawnLimitXRight = 7;
     private float spawnPosY = 30;
 
-    private float startDelay = 1.0f;
-    private float spawnInterval = 4.0f;
+    
+    //private float spawnInterval = 4.0f;
 
-    public bool gameOver = false;
-    public HealthSystem healthSystem;
-    public DisplayScore displayScore;
+    //public bool gameOver = false;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         //InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
-        //reference to scripts
-        healthSystem = GameObject.FindGameObjectWithTag("HealthSystem").GetComponent<HealthSystem>();
-        displayScore = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<DisplayScore>();
+        
         StartCoroutine(SpawnRandomPrefabwithCoroutine());
 
     }
@@ -31,7 +32,7 @@ public class SpawnManagerX : MonoBehaviour
     // Spawn random ball at random x position at top of play area
     void SpawnRandomBall ()
     {
-        spawnInterval = Random.Range(2, 4);
+        //spawnInterval = Random.Range(2, 4);
         int index = Random.Range(0, ballPrefabs.Length);
 
         // Generate random ball index and random spawn position
@@ -44,13 +45,13 @@ public class SpawnManagerX : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        while (!healthSystem.gameOver)
+        while (!DisplayScore.gameOver)
         {
-            SpawnRandomBall();
-
-            float randomDelay = Random.Range(0.8f, 2.0f);
+            float randomDelay = Random.Range(3,5);
 
             yield return new WaitForSeconds(1.5f);
+
+            SpawnRandomBall();
         }
 
        

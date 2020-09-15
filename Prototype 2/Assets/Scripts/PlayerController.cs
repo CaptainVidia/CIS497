@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 2
+//Description: player can move horizontally on a fixed interval
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

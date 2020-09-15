@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 2
+//Description: dog doesnt hit ball decrease one heart and destroy ball
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

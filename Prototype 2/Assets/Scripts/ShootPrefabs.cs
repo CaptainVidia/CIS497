@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 2
+//Description: allow player to shoot prefab with spacebar
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

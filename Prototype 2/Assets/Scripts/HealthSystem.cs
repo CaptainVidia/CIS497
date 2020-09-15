@@ -1,4 +1,8 @@
-﻿//This script is based on https://www.youtube.com/watch?v=3uyolYVsiWc
+﻿//Author: George Tang
+//Assignment: Prototype 2
+//Description: Health System using sprites and determine health
+//This script is based on https://www.youtube.com/watch?v=3uyolYVsiWc
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

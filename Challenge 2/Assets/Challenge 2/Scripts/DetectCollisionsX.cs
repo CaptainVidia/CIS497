@@ -1,22 +1,23 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Challenge 2
+//Description: if dog hits ball then increment score by 1 and destroy ball
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DetectCollisionsX : MonoBehaviour
 {
-    private DisplayScore displayScoreScript;
-    private void Start()
-    {
-        displayScoreScript = GameObject.FindGameObjectWithTag("DisplayScoreText").GetComponent<DisplayScore>();
-    }
+    
     private void OnTriggerEnter(Collider other)
     {
-        displayScoreScript.score++;
+        
 
         //destroy dog
         //Destroy(other.gameObject);
 
         //destroy ball
         Destroy(gameObject);
+        DisplayScore.score++;
     }
 }

@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Challenge 2
+//Description: space triggers to spawn dog and move forward
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

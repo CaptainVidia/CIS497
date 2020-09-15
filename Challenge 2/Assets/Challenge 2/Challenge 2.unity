@@ -172,9 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textbox: {fileID: 841476196}
-  score: 0
-  gameOver: 0
-  won: 0
 --- !u!4 &68112984
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,8 +1137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -129.4999, y: 135.67368}
-  m_SizeDelta: {x: 258.9998, y: 30}
+  m_AnchoredPosition: {x: -113.46, y: 103.88}
+  m_SizeDelta: {x: 262.07248, y: 65.84241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841476196
 MonoBehaviour:
@@ -1163,10 +1160,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1174,7 +1171,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Score: '
 --- !u!114 &841476197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,9 +1185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textbox: {fileID: 841476196}
-  score: 0
-  gameOver: 0
-  won: 0
 --- !u!222 &841476198
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1561,9 +1555,6 @@ MonoBehaviour:
   - {fileID: 2178073922435996824, guid: 1d143480adadf43389395930eee2b5cf, type: 3}
   - {fileID: 4524317531697499709, guid: a325bcb65fd94414191d0ddc2514e2dc, type: 3}
   - {fileID: 7945815000853930370, guid: fc41e6839a5494e0cbaea5f0081c271d, type: 3}
-  gameOver: 0
-  healthSystem: {fileID: 0}
-  displayScore: {fileID: 0}
 --- !u!1 &1014852129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,7 +2273,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593198397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c2afe4a2bd3c4642bc74eb832ee4477, type: 3}
+  m_Script: {fileID: 11500000, guid: dd6cd872988584b4790821da347c0694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
@@ -2518,7 +2509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -157}
+  m_AnchoredPosition: {x: -100, y: -131.7}
   m_SizeDelta: {x: -204.01602, y: -273.97626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1759002333

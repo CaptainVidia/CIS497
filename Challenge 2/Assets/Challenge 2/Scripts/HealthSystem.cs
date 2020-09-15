@@ -1,4 +1,7 @@
-﻿//This script is based on https://www.youtube.com/watch?v=3uyolYVsiWc
+﻿//Author: George Tang
+//Assignment: Challenge 2
+//Description: Health System using sprites and determine health
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,18 +52,18 @@ public class HealthSystem : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+        //not needed using text instead
+        //if (health <= 0)
+        //{
+        //    gameOver = true;
+        //    gameOverText.SetActive(true);
 
-        if (health <= 0)
-        {
-            gameOver = true;
-            gameOverText.SetActive(true);
-
-            //Press R to restart if game is over
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-        }
+        //    //Press R to restart if game is over
+        //    if (Input.GetKeyDown(KeyCode.R))
+        //    {
+        //        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //    }
+        //}
 
     }
 
@@ -73,7 +76,4 @@ public class HealthSystem : MonoBehaviour
     {
         maxHealth++;
     }
-
-
 }
-

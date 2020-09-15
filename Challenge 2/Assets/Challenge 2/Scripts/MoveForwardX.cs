@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 2
+//Description: move dog foward
+
 using System.Collections.Generic;
 using UnityEngine;
 
