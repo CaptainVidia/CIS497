@@ -1,6 +1,6 @@
 ﻿//Author: George Tang
 //Assignment: Prototype 2
-//Description: spawn dog and balls
+//Description: spawn animals and cookie
 
 using System.Collections;
 using System.Collections.Generic;

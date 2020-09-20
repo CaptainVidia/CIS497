@@ -1,6 +1,6 @@
 ﻿//Author: George Tang
 //Assignment: Prototype 2
-//Description: allow player to move 
+//Description: allow cookie to move
 
 using System.Collections;
 using System.Collections.Generic;
