@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jumpSound, 1.0f);
 
         }
+
+        //if (gameOver)
+        //{
+        //    rb.
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
