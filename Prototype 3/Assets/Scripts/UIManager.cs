@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 3
+//Description: Manages the UI. displays win and lose message if conditions are true
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

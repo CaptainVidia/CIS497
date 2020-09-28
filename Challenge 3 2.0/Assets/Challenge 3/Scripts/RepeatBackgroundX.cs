@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 3
+//Description: repeats the background
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

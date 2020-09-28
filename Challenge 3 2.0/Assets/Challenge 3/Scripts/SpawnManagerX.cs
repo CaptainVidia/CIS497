@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 3
+//Description: spawns the obstacles
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

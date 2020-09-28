@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 3
+//Description: Trigger Zones. if trigger zones are hit one point is added to the player's score
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

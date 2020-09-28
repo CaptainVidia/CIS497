@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Author: George Tang
+//Assignment: Prototype 3
+//Description: allows player to jump and audio and animiation files been added
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
