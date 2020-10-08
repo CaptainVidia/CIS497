@@ -6,7 +6,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
-
+    public bool gameOver;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
@@ -51,5 +51,16 @@ public class PlayerPlatformerController : PhysicsObject {
         animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
         animator.SetFloat("velocityY", velocity.y);
         targetVelocity = move * maxSpeed;
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        // if player collides with bomb, explode and set gameOver to true
+        if (other.gameObject.CompareTag("Gem"))
+        {
+            Destroy(other.gameObject);
+        }
+
+        
+
     }
 }
