@@ -25,7 +25,7 @@ public class Rotate : MonoBehaviour
         if (other.CompareTag("Player") && !triggered)
         {
             triggered = true;
-            uIManager.score++;
+            ScoreManager.score++;
         }
     }
 }
