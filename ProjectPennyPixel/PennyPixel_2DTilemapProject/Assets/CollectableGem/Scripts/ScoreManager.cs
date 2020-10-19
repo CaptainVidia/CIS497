@@ -6,52 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static bool gameOver = false;
-    public static bool won = false;
+    
+    public Text scoreText;
     public static int score = 0;
+    public static bool win = false;
 
-    public Text textbox;
-
-    void Start()
-    {
-        gameOver = false;
-        won = false;
-        score = 0;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        // if game is not over, display score
-        if (!gameOver)
+        if (!win)
         {
-            textbox.text = "Score: " + score;
+            scoreText.text = "Score: " + score;
         }
-
-        // win conditoon 3 or more
-        if (score >= 5)
+        else if (score >= 10)
         {
-            won = true;
-            gameOver = true;
+            scoreText.text = "You Win! All Gems Collected! Press R to Restart!";
         }
-
-        if (gameOver)
+        else
         {
-            if (won)
-            {
-                textbox.text = "You Win!\n Press R to Try Again!";
-            }
-            else
-            {
-                textbox.text = "You Lose!\n Press R to Try Again!";
-            }
-
+            scoreText.text = "Special Gem collected !\nCollected Gems " + score + " out of 10";
         }
-        // outsude of the if statement so player can restart the game at any time
-        // instead of a must trigger win or lose
-        if (Input.GetKeyDown(KeyCode.R))
+        if (win && Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Gem"))
+        {
+            score++;
+        }
+        if (collision.CompareTag("SpecialGem"))
+        {
+            win = true;
         }
     }
 }
+
