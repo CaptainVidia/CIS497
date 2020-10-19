@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
         // if game is not over, display score
         if (!gameOver)
         {
-            textbox.text = "Choose a path to win!";
+            textbox.text = "Decide Your Fate!";
         }
 
         // increment score by 1 if player goes pass the trigger area
