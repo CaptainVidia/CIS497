@@ -5,43 +5,44 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public int score;
-
+    private string currentLevelName = string.Empty;
     public GameObject pauseMenu;
-    //variable to keep track what level we are on
-    private string CurrentLevelName = string.Empty;
-
-    //#region This code makes this class a singleton
     //public static GameManager instance;
 
-    //private void Awake()
-    //{
-    //    if (instance == null)
-    //    {
-    //        instance = this;
-    //        // this makes te GameManager GameObeject persist across scenes
-    //        DontDestroyOnLoad(gameObject);
-    //    }
-    //    else
-    //    {
-    //        Destroy(gameObject);
-    //        Debug.LogError("Trying to instantiate a second instance of Singleton GameManager");
-    //    }
-    //}
-    //#endregion
-    //methods to load and unload scenes
     public void LoadLevel(string levelName)
     {
+        Cursor.lockState = CursorLockMode.Locked;
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
         if (ao == null)
         {
             Debug.LogError("[GameManager] Unable to load level " + levelName);
             return;
         }
-        CurrentLevelName = levelName;
+        currentLevelName = levelName;
+    }
+
+    public void RestartLevel()
+    {
+        string restartName = currentLevelName;
+        AsyncOperation ao = SceneManager.UnloadSceneAsync(restartName);
+        if (ao == null)
+        {
+            Debug.LogError("[GameManager] Unable to unload level " + restartName);
+            return;
+        }
+        Cursor.lockState = CursorLockMode.Locked;
+        ao = SceneManager.LoadSceneAsync(restartName, LoadSceneMode.Additive);
+        if (ao == null)
+        {
+            Debug.LogError("[GameManager] Unable to load level " + restartName);
+            return;
+        }
+        currentLevelName = restartName;
     }
 
     public void UnloadLevel(string levelName)
     {
+        Cursor.lockState = CursorLockMode.Confined;
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName);
         if (ao == null)
         {
@@ -52,18 +53,19 @@ public class GameManager : Singleton<GameManager>
 
     public void UnloadCurrentLevel()
     {
-        AsyncOperation ao = SceneManager.UnloadSceneAsync(CurrentLevelName);
+        AsyncOperation ao = SceneManager.UnloadSceneAsync(currentLevelName);
         if (ao == null)
         {
-            Debug.LogError("[GameManager] Unable to unload level " + CurrentLevelName);
+            Debug.LogError("[GameManager] Unable to unload level " + currentLevelName);
             return;
         }
     }
-    //pause and unpause game
+
     public void Pause()
     {
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void Unpause()
@@ -78,5 +80,6 @@ public class GameManager : Singleton<GameManager>
         {
             Pause();
         }
+
     }
 }

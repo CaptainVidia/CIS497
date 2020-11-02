@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/*  George Tang
+ *  Assignement 6
+ * script not used
+ */
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
