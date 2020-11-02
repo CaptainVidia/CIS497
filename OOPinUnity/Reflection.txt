@@ -1,0 +1,32 @@
+1.    What is one class in your prototype that inherits from another class?
+	  TriggerZone.cs
+	a.What class did it inherit from?
+	Target.cs
+	Trigger Zone and Target are parent and child this way player can shoot boxes without 
+	triggering anything because text is cleared and no score is tracked only if player find the portal. 
+	Shooting boxes does keep a score but score text will 
+	not show because main focus is finding the portal.
+
+2.    What is a class in your prototype that implements an Interface?
+	
+	public void Jump()
+	
+	a.What interface did it implement?
+	
+	void Jump()
+
+3.Where did you use polymorphism in your code and what class did you substitute for what super-type?
+	In Jump.cs, I attempted to let the player to be able to run while the tutorial is running.
+	Just in case the game stops running at least the player can run around the map
+
+4.    How would you call LoadLevel on your singleton game manager from another class?  
+	
+
+	Switch MonoBehavior to Singleton<GameManager> to be able to access the LoadLevel 
+	method class from another calss
+
+5.    Would you need to set up a reference to your game manager?
+	Yes  
+	a.Why or why not?
+	If there is no reference then game manager will not run because no objects and scripts
+	will be attached to the the game manager causing errors in running game

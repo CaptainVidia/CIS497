@@ -5,7 +5,7 @@
 using UnityEngine;
 using System.Collections;
 
-public interface Jumpin
+public interface RunIn
 {
-    void Run();
+    void Jump();
 }
