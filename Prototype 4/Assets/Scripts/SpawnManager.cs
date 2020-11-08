@@ -1,26 +1,41 @@
-﻿using System.Collections;
+﻿/*
+ * George Tang
+ * Assignment 7 - Prototype 4 
+ * regulates enemy spawn positions and waves
+ * */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
-
+    public Text winLossText;
     public GameObject enemyPrefab;
+    public GameObject powerupPrefab;
     private float spawnRange = 9;
     public int enemyCount;
-    public static int waveNumber = 1;
-    public GameObject powerupPrefab;
-    public Text winText;
-    public Text waveText;
+    public int waveNumber = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        waveNumber = 1;
-        waveText.text = "Wave: " + waveNumber;
-        SpawnEnemyWave(waveNumber);
-        SpawnPowerup(1);
+    }
+
+    private void SpawnEnemyWave(int enemiesToSpawn)
+    {
+        for (int i = 0; i < enemiesToSpawn; i++)
+        {
+            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        }
+    }
+
+    private void SpawnPowerup(int powerupsToSpawn)
+    {
+        for (int i = 0; i < powerupsToSpawn; i++)
+        {
+            Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
+        }
     }
 
     private Vector3 GenerateSpawnPosition()
@@ -36,38 +51,18 @@ public class SpawnManager : MonoBehaviour
     {
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        if (enemyCount == 0)
+        if (waveNumber == 10 && enemyCount == 0)
+        {
+            ConditionManager.gameOver = true;
+            ConditionManager.win = true;
+        }
+        if (enemyCount == 0 && !ConditionManager.gameOver && ConditionManager.gameStart)
         {
             waveNumber++;
-            waveText.text = "Wave: " + waveNumber;
+            winLossText.text = "Wave: " + waveNumber;
             SpawnEnemyWave(waveNumber);
             SpawnPowerup(1);
         }
 
-        if (waveNumber == 10)
-        {
-
-           winText.text = "You Win Press R to restart!";
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-            }
-        }
-    }
-
-    private void SpawnPowerup(int powerupsToSpawn)
-    {
-        for (int i = 0; i < powerupsToSpawn; i++)
-        {
-            Instantiate(powerupPrefab, GenerateSpawnPosition(), powerupPrefab.transform.rotation);
-        }
-    }
-
-    private void SpawnEnemyWave(int enemiesToSpawn)
-    {
-        for (int i = 0; i < enemiesToSpawn; i++)
-        {
-            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
-        }
     }
 }

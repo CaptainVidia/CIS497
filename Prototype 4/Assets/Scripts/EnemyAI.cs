@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * George Tang
+ * Assignment 7 - Prototype 4 
+ * controls enemy AI movements
+ * */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

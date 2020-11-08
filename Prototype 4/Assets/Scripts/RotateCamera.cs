@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * George Tang
+ * Assignment 7 - Prototype 4 
+ * allows player to rotate camera with A and D
+ * */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
